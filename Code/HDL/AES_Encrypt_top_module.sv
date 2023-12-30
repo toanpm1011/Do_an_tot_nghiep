@@ -14,6 +14,7 @@ module AES_Encrypt_top_module
         input   logic   [127:0] plain_text,
         input   logic   [127:0] cipher_key,
         input   logic           cipher_new_en,
+        input EN,
         // Output Ports
         output  logic           cipher_ready,
         output  logic   [127:0] cipher_text
@@ -30,7 +31,8 @@ module AES_Encrypt_top_module
         .cipher_new_en  (cipher_new_en),
         .round_key_en   (round_key_en),
         .round_num      (round_num),
-        .round_key_out  (round_key)
+        .round_key_out  (round_key),
+        .EN                 (EN)
     );
 
     AES_Encrypt_Core    D2  (
@@ -43,7 +45,8 @@ module AES_Encrypt_top_module
         .round_key_en   (round_key_en),
         .cipher_ready  (cipher_ready),
         .round_num      (round_num),
-        .cipher_text    (cipher_text)
+        .cipher_text    (cipher_text),
+        .EN                 (EN)
     );
     
 endmodule: AES_Encrypt_top_module

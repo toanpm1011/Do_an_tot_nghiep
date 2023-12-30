@@ -48,15 +48,15 @@ function logic [31:0] Mul_MixColumn;
 
 endfunction : Mul_MixColumn
 
-function logic [127:0] MixColumn;
-	input [127:0] state_in;
+// function logic [127:0] MixColumn;
+// 	input [127:0] state_in;
 
-	MixColumn [127:96] = Mul_MixColumn(state_in[127:96]);
-	MixColumn [95:64]  = Mul_MixColumn(state_in[95:64]);
-	MixColumn [63:32]  = Mul_MixColumn(state_in[63:32]);
-	MixColumn [31:0]   = Mul_MixColumn(state_in[31:0]);
+// 	MixColumn [127:96] = Mul_MixColumn(state_in[127:96]);
+// 	MixColumn [95:64]  = Mul_MixColumn(state_in[95:64]);
+// 	MixColumn [63:32]  = Mul_MixColumn(state_in[63:32]);
+// 	MixColumn [31:0]   = Mul_MixColumn(state_in[31:0]);
 
-endfunction
+// endfunction
 
 function [31:0] Mul_InvMixColumn;
 	input 	[31:0] before_inv_mix_column;
@@ -68,12 +68,21 @@ function [31:0] Mul_InvMixColumn;
 
 endfunction : Mul_InvMixColumn
 
-function logic [127:0] InvMixColumn;
+function logic [127:0] MixColumn;
 	input [127:0] state_in;
+  input         EN;
 
-	InvMixColumn [127:96] = Mul_InvMixColumn(state_in[127:96]);
-	InvMixColumn [95:64]  = Mul_InvMixColumn(state_in[95:64]);
-	InvMixColumn [63:32]  = Mul_InvMixColumn(state_in[63:32]);
-	InvMixColumn [31:0]   = Mul_InvMixColumn(state_in[31:0]);
-
-endfunction
+  if (EN) begin 
+    MixColumn [127:96] = Mul_MixColumn(state_in[127:96]);
+    MixColumn [95:64]  = Mul_MixColumn(state_in[95:64]);
+    MixColumn [63:32]  = Mul_MixColumn(state_in[63:32]);
+    MixColumn [31:0]   = Mul_MixColumn(state_in[31:0]);
+  end 
+  else begin
+    MixColumn [127:96] = Mul_InvMixColumn(state_in[127:96]);
+	  MixColumn [95:64]  = Mul_InvMixColumn(state_in[95:64]);
+	  MixColumn [63:32]  = Mul_InvMixColumn(state_in[63:32]);
+	  MixColumn [31:0]   = Mul_InvMixColumn(state_in[31:0]);
+  end 
+	
+endfunction : MixColumn

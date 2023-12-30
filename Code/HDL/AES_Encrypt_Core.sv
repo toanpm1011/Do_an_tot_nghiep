@@ -14,6 +14,7 @@ module AES_Encrypt_Core
         input  logic [127:0] cipher_key,
         input  logic [127:0] round_key,
         input  logic         cipher_new_en,
+        input EN,
         
     // Output Ports
         output logic         round_key_en,
@@ -83,13 +84,13 @@ assign	cipher_text	= cipher_text_reg;
     
 // Sub Bytes
 
-assign after_sub_bytes = S_box(cipher_text_reg);
+assign after_sub_bytes = S_box(cipher_text_reg, EN);
 // Shift Row
 
-assign after_shiftRows = ShiftRow(after_sub_bytes);
+assign after_shiftRows = ShiftRow(after_sub_bytes, EN);
 
 // MixColumn
 
-assign after_mix_column = MixColumn(after_shiftRows);
+assign after_mix_column = MixColumn(after_shiftRows, EN);
 
 endmodule: AES_Encrypt_Core

@@ -13,6 +13,7 @@ module test_func;
     //output
     wire [127:0] cipher_text;
     wire         cipher_ready;
+    reg EN;
     //
     AES_Encrypt_top_module dut
     (   .clk(clk),
@@ -20,6 +21,7 @@ module test_func;
         .plain_text(plain_text),
         .cipher_key(cipher_key),
         .cipher_new_en(cipher_new_en),
+        .EN(EN),
     //output
         .cipher_ready(cipher_ready),
         .cipher_text(cipher_text)
@@ -41,13 +43,15 @@ module test_func;
         reset_n = 1;
       #10
       cipher_new_en = 1;
-      plain_text = 128'h0123456789abcdeffedcba9876543210;    cipher_key = 128'h0f1571c947d9e8590cb7add6af7f6798; 
+      EN =1;
+      plain_text = 128'h00112233445566778899aabbccddeeff;    cipher_key = 128'h000102030405060708090a0b0c0d0e0f; 
       #10
       cipher_new_en = 0;
       #120
       $display ("---- cipher_text: %32h - READY: %1b \n", cipher_text[127:0], cipher_ready);
       #10
       cipher_new_en = 1;
+      EN =1;
       plain_text = 128'h00112233445566778899aabbccddeeff;    cipher_key = 128'ha5a5a5a5a5a5a5a5a5a5a5a5a5a5a5a5; 
       #10
       cipher_new_en = 0;

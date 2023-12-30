@@ -13,6 +13,7 @@ module AES_Decrypt_Key_Expand
         input   logic           decipher_new_en,  // Co cho phep cipher text san sang
         input   logic           round_key_en,   // Co bao nhieu khoa vong moi da san sang
         input   logic [3:0]     round_num,      // So vong lap hien tai
+        input                   EN,
     // Output Port
         output  logic [127:0]   round_key_out   // Khoa vong dau ra
     );
@@ -44,13 +45,13 @@ assign round_key_out[127:0] = round_key_reg[127:0];
 assign after_rot_word = {round_key [23:0], round_key [31:24]};
 
     // Sub Word
-assign after_sub_word [31:24] = aes128_sbox(after_rot_word [31:24]);
-assign after_sub_word [23:16] = aes128_sbox(after_rot_word [23:16]);
-assign after_sub_word [15:8]  = aes128_sbox(after_rot_word [15:8]);
-assign after_sub_word [7:0]   = aes128_sbox(after_rot_word [7:0]);
+assign after_sub_word [31:24] = aes128_sbox1(after_rot_word [31:24], 1);
+assign after_sub_word [23:16] = aes128_sbox1(after_rot_word [23:16],1);
+assign after_sub_word [15:8]  = aes128_sbox1(after_rot_word [15:8], 1);
+assign after_sub_word [7:0]   = aes128_sbox1(after_rot_word [7:0], 1);
 
     // Add Rcon
-assign rcon = Rcon_Inv(round_num);
+assign rcon = Rcon(round_num, EN);
 assign after_add_rcon = rcon ^ after_sub_word;
 
     // next_round_key
