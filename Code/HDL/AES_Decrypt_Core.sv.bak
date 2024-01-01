@@ -1,8 +1,8 @@
 //  Module: AES_Encrypt_Core
 //
-//`include "AES_Mul_func.sv"
-//`include "AES_S_box.sv"
-//`include "AES_Encrypt_ShiftRow_func.sv"
+`include "AES_Mul_func.sv"
+`include "AES_S_box.sv"
+`include "AES_Encrypt_ShiftRow_func.sv"
 
 
 module AES_Decrypt_Core

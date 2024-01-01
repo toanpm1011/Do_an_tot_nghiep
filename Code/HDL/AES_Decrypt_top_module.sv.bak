@@ -1,10 +1,10 @@
 //  Module: AES_Encrypt_top_module
 //
 
-//`include "AES_Mul_func.sv"
-//`include "AES_S_box.sv"
-//`include "AES_Encrypt_ShiftRow_func.sv"
-//`include "AES_Rcon_func.sv"
+`include "AES_Mul_func.sv"
+`include "AES_S_box.sv"
+`include "AES_Encrypt_ShiftRow_func.sv"
+`include "AES_Rcon_func.sv"
 
 module AES_Decrypt_top_module
     (// Ports Declaration

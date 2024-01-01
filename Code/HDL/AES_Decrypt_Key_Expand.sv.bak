@@ -1,8 +1,8 @@
 //  Module: AES_Encrypt_Key_Expand
 //  
 
-//`include "AES_S_box.sv"
-//`include "AES_Rcon_func.sv"
+`include "AES_S_box.sv"
+`include "AES_Rcon_func.sv"
 
 module AES_Decrypt_Key_Expand
     (   // Port Declarations

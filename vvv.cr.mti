@@ -13,22 +13,6 @@ Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
 Top level modules:
 	--none--
 
-} {} {}} C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_top_module.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_top_module.sv
-Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
--- Compiling package AES_Decrypt_top_module_sv_unit
--- Compiling module AES_Decrypt_top_module
-
-Top level modules:
-	AES_Decrypt_top_module
-
-} {} {}} C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_Key_Expand.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_Key_Expand.sv
-Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
--- Compiling package AES_Decrypt_Key_Expand_sv_unit
--- Compiling module AES_Decrypt_Key_Expand
-
-Top level modules:
-	AES_Decrypt_Key_Expand
-
 } {} {}} C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Encrypt_Core_tb.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Encrypt_Core_tb.sv
 Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
 -- Compiling package AES_Encrypt_Core_tb_sv_unit
@@ -84,14 +68,6 @@ Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
 
 Top level modules:
 	test_func
-
-} {} {}} C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_Core.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_Decrypt_Core.sv
-Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
--- Compiling package AES_Decrypt_Core_sv_unit
--- Compiling module AES_Decrypt_Core
-
-Top level modules:
-	AES_Decrypt_Core
 
 } {} {}} C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_S_box.sv {1 {vlog -work work -vopt -sv -stats=none C:/Users/Admin/Desktop/LAST/Do_an_tot_nghiep/Code/HDL/AES_S_box.sv
 Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
