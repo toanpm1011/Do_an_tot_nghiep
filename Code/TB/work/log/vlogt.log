@@ -1,0 +1,21 @@
+QuestaSim-64 vlog 10.7d_1 Compiler 2019.05 May  8 2019
+Start time: 09:25:10 on Dec 19,2023
+vlog -f filelist_tb.f -l ./log/vlogt.log 
+-- Skipping package uvm_pkg
+** Warning: ** while parsing file included at ../src/dti_uart_tb_top/dti_uart_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(24)
+** at ../src/dti_uart_tx/dti_uart_tx_driver.sv(1): (vlog-2283) Extra semicolon in $unit (global) scope.
+-- Compiling package dti_uart_tb_top_sv_unit
+-- Compiling interface dti_uart_intf
+-- Compiling module dti_uart_tb_top
+-- Scanning library directory '../inc'
+-- Scanning library directory '../libs/uvm-1.1d/src'
+-- Scanning library directory '../src'
+
+Referenced (but uncompiled) modules or primitives:
+	uart
+
+Top level modules:
+	dti_uart_tb_top
+End time: 09:25:11 on Dec 19,2023, Elapsed time: 0:00:01
+Errors: 0, Warnings: 1

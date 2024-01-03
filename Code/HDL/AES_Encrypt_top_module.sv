@@ -14,7 +14,7 @@ module AES_Encrypt_top_module
         input   logic   [127:0] plain_text,
         input   logic   [127:0] cipher_key,
         input   logic           cipher_new_en,
-        input EN,
+        input                   EN,
         // Output Ports
         output  logic           cipher_ready,
         output  logic   [127:0] cipher_text
