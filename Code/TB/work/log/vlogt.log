@@ -1,21 +1,94 @@
-QuestaSim-64 vlog 10.7d_1 Compiler 2019.05 May  8 2019
-Start time: 09:25:10 on Dec 19,2023
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 21:03:45 on Jan 04,2024
 vlog -f filelist_tb.f -l ./log/vlogt.log 
 -- Skipping package uvm_pkg
-** Warning: ** while parsing file included at ../src/dti_uart_tb_top/dti_uart_tb_top.sv(1)
-** while parsing file included at ../inc/include.svh(24)
-** at ../src/dti_uart_tx/dti_uart_tx_driver.sv(1): (vlog-2283) Extra semicolon in $unit (global) scope.
--- Compiling package dti_uart_tb_top_sv_unit
--- Compiling interface dti_uart_intf
--- Compiling module dti_uart_tb_top
--- Scanning library directory '../inc'
--- Scanning library directory '../libs/uvm-1.1d/src'
--- Scanning library directory '../src'
-
-Referenced (but uncompiled) modules or primitives:
-	uart
-
-Top level modules:
-	dti_uart_tb_top
-End time: 09:25:11 on Dec 19,2023, Elapsed time: 0:00:01
-Errors: 0, Warnings: 1
+** Error (suppressible): ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(9)
+** at ../src/aes_encrypt/aes_encrypt_driver.sv(65): (vlog-13163) End label 'dti_uart_tx_driver' does not match class name on line 1.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(12)
+** while parsing macro expansion: 'uvm_do_with' starting at ../src/aes_encrypt/aes_encrypt_sequence.sv(17)
+** at ../src/aes_encrypt/aes_encrypt_sequence.sv(17): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(12)
+** while parsing macro expansion: 'uvm_do_with' starting at ../src/aes_encrypt/aes_encrypt_sequence.sv(18)
+** at ../src/aes_encrypt/aes_encrypt_sequence.sv(18): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(12)
+** while parsing macro expansion: 'uvm_do_with' starting at ../src/aes_encrypt/aes_encrypt_sequence.sv(19)
+** at ../src/aes_encrypt/aes_encrypt_sequence.sv(19): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error (suppressible): ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(12)
+** at ../src/aes_encrypt/aes_encrypt_sequence.sv(22): (vlog-13163) End label 'dti_uart_tx_sequence' does not match class name on line 1.
+** Error (suppressible): ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(13)
+** at ../src/aes_encrypt/aes_encrypt_agent.sv(32): (vlog-13163) End label 'dti_uart_tx_agent' does not match class name on line 1.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(16)
+** at ../src/aes_decrypt/aes_decrypt_driver.sv(62): near "endclass": syntax error, unexpected endclass.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** while parsing macro expansion: 'uvm_component_utils' starting at ../src/aes_decrypt/aes_decrypt_monitor.sv(2)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(2): (vlog-2730) Undefined variable: 'aes_decrypt_monitor'.
+** Warning: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** while parsing macro expansion: 'uvm_component_utils' starting at ../src/aes_decrypt/aes_decrypt_monitor.sv(2)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(2): (vlog-2953) Incorrect usage of keyword 'static'.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** while parsing macro expansion: 'uvm_component_utils' starting at ../src/aes_decrypt/aes_decrypt_monitor.sv(2)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(2): near "function": syntax error, unexpected function, expecting IDENTIFIER or TYPE_IDENTIFIER or NETTYPE_IDENTIFIER.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** while parsing macro expansion: 'uvm_component_utils' starting at ../src/aes_decrypt/aes_decrypt_monitor.sv(2)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** while parsing macro expansion: 'uvm_component_utils' starting at ../src/aes_decrypt/aes_decrypt_monitor.sv(2)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(2): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(10): Illegal declaration after the statement near line '4'.  Declarations must precede statements.  Look for stray semicolons.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(11): 'super.new()' call can be made only from within a class constructor.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(12): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(18): (vlog-2730) Undefined variable: 'decrypt_ap_port'.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(22): near "endfunction": syntax error, unexpected endfunction, expecting endtask.
+** Error (suppressible): ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(28): (vlog-13163) End label 'run_phase' does not match task name on line 38.
+** Error (suppressible): ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(17)
+** at ../src/aes_decrypt/aes_decrypt_monitor.sv(40): (vlog-13163) End label 'aes_decrypt_monitor' does not match class name on line 1.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(19)
+** while parsing macro expansion: 'uvm_do_with' starting at ../src/aes_decrypt/aes_decrypt_sequence.sv(17)
+** at ../src/aes_decrypt/aes_decrypt_sequence.sv(17): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(19)
+** while parsing macro expansion: 'uvm_do_with' starting at ../src/aes_decrypt/aes_decrypt_sequence.sv(18)
+** at ../src/aes_decrypt/aes_decrypt_sequence.sv(18): near "=": syntax error, unexpected '=', expecting ++ or --.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(20)
+** at ../src/aes_decrypt/aes_decrypt_agent.sv(6): Invalid type 'aes_decrypt_monitor'. Please check the type of the variable 'monitor'.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(20)
+** at ../src/aes_decrypt/aes_decrypt_agent.sv(21): (vlog-2730) Undefined variable: 'monitor'.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(20)
+** at ../src/aes_decrypt/aes_decrypt_agent.sv(21): (vlog-2164) Class or package 'aes_decrypt_monitor' not found.
+** Error: ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(20)
+** at ../src/aes_decrypt/aes_decrypt_agent.sv(21): (vlog-2730) Undefined variable: 'aes_decrypt_monitor'.
+** Error: (vlog-13069) ** while parsing file included at ../src/aes_tb_top/aes_tb_top.sv(1)
+** while parsing file included at ../inc/include.svh(20)
+** at ../src/aes_decrypt/aes_decrypt_agent.sv(21): near "::": syntax error, unexpected ::, expecting ';'.
+End time: 21:03:45 on Jan 04,2024, Elapsed time: 0:00:00
+Errors: 25, Warnings: 1

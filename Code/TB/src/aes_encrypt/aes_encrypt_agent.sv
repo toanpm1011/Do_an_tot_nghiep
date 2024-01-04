@@ -1,10 +1,10 @@
 class aes_encrypt_agent extends uvm_agent;
 
-	`uvm_component_utils(dti_uart_tx_agent)
+	`uvm_component_utils(aes_encrypt_agent)
 
-	dti_uart_tx_driver driver;
-	dti_uart_tx_monitor monitor;
-	dti_uart_tx_sequencer sequencer;
+	aes_encrypt_driver driver;
+	aes_encrypt_monitor monitor;
+	aes_encrypt_sequencer sequencer;
 
 //-----------------------------------------------------------------------------
 // function :new
@@ -17,9 +17,9 @@ class aes_encrypt_agent extends uvm_agent;
 //-----------------------------------------------------------------------------
 	function void build_phase (uvm_phase phase);
 		super.build_phase(phase);
-		driver = dti_uart_tx_driver::type_id::create("driver",this);
-		monitor = dti_uart_tx_monitor::type_id::create("monitor",this);
-		sequencer = dti_uart_tx_sequencer::type_id::create("sequencer",this);
+		driver = aes_encrypt_driver::type_id::create("driver",this);
+		monitor = aes_encrypt_monitor::type_id::create("monitor",this);
+		sequencer = aes_encrypt_sequencer::type_id::create("sequencer",this);
 	endfunction :build_phase
 //-----------------------------------------------------------------------------
 // function : connect_phase
@@ -29,4 +29,4 @@ class aes_encrypt_agent extends uvm_agent;
 		driver.seq_item_port.connect(sequencer.seq_item_export);
 	endfunction : connect_phase
 
-endclass : dti_uart_tx_agent
+endclass : aes_encrypt_agent

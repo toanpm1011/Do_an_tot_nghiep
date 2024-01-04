@@ -1,5 +1,5 @@
 class aes_encrypt_sequencer extends uvm_sequencer#(aes_encrypt_transaction);
-	`uvm_component_utils(aes_sequencer)
+	`uvm_component_utils(aes_encrypt_sequencer)
 //-----------------------------------------------------------------------------
 // function : new 
 //-----------------------------------------------------------------------------

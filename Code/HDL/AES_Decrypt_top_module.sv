@@ -14,7 +14,7 @@ module AES_Decrypt_top_module
         input   logic   [127:0] cipher_text,
         input   logic   [127:0] round_key_10,
         input   logic           decipher_new_en,
-        input                   EN,
+        input                   en,
         // Output Ports
         output  logic           decipher_ready,
         output  logic   [127:0] plain_text
@@ -32,7 +32,7 @@ module AES_Decrypt_top_module
         .round_key_en       (round_key_en),
         .round_num          (round_num),
         .round_key_out      (round_key_out),
-        .EN                 (EN)
+        .en                 (en)
     );
 
     AES_Decrypt_Core    D2  (
@@ -42,7 +42,7 @@ module AES_Decrypt_top_module
         .round_key_10             (round_key_10),
         .round_key          (round_key_out),
         .decipher_new_en        (decipher_new_en),
-        .EN                 (EN),
+        .en                 (en),
         .round_key_en       (round_key_en),
         .decipher_ready              (decipher_ready),
         .round_num          (round_num),

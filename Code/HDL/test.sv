@@ -21,7 +21,7 @@ module test_func;
         .plain_text(plain_text),
         .cipher_key(cipher_key),
         .cipher_new_en(cipher_new_en),
-        .EN(EN),
+        .EN(en),
     //output
         .cipher_ready(cipher_ready),
         .cipher_text(cipher_text)

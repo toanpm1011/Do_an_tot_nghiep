@@ -3,7 +3,7 @@
 `include "uvm_macros.svh"
 import  uvm_pkg::*;
 
-`include "../src/aes_env/aes_intf.sv"
+`include "../src/aes_env/aes_interface.sv"
 
 `include "../src/aes_encrypt/aes_encrypt_transaction.sv"
 `include "../src/aes_encrypt/aes_encrypt_driver.sv"
@@ -21,4 +21,4 @@ import  uvm_pkg::*;
 
 `include "../src/aes_env/aes_scoreboard.sv"
 `include "../src/aes_env/aes_env.sv"
-`include "../src/aes_test/aes_test.sv"
+`include "../src/aes_test/test.sv"

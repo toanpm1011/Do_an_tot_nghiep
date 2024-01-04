@@ -22,7 +22,7 @@ module tb_cipher_inv_top;
   .cipher_text(cipher_text),
   .round_key_10(round_key_10),
   .decipher_new_en(decipher_en),
-  .EN(EN),
+  .en(EN),
 
   //output
   .decipher_ready(decipher_ready),

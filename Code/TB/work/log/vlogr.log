@@ -1,12 +1,19 @@
-QuestaSim-64 vlog 10.7d_1 Compiler 2019.05 May  8 2019
-Start time: 09:25:10 on Dec 19,2023
+Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
+Start time: 20:35:05 on Jan 04,2024
 vlog -f filelist_rtl.f "+cover=bcefs" -nocoverfec -l ./log/vlogr.log 
--- Compiling module uart
--- Scanning library directory '../../hdl'
--- Compiling module uart_transmitter
--- Compiling module uart_receiver
+-- Compiling module AES_top
+-- Scanning library directory '../../HDL'
+-- Compiling module AES_Decrypt_top_module
+-- Compiling package AES_Encrypt_top_module_sv_unit
+-- Compiling module AES_Encrypt_top_module
+-- Compiling module AES_Decrypt_Key_Expand
+-- Compiling module AES_Decrypt_Core
+-- Compiling package AES_Encrypt_Key_Expand_sv_unit
+-- Compiling module AES_Encrypt_Key_Expand
+-- Compiling package AES_Encrypt_Core_sv_unit
+-- Compiling module AES_Encrypt_Core
 
 Top level modules:
-	uart
-End time: 09:25:10 on Dec 19,2023, Elapsed time: 0:00:00
+	AES_top
+End time: 20:35:05 on Jan 04,2024, Elapsed time: 0:00:00
 Errors: 0, Warnings: 0

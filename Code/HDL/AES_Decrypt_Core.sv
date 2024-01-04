@@ -1,8 +1,8 @@
 //  Module: AES_Encrypt_Core
 //
-//`include "AES_Mul_func.sv"
-//`include "AES_S_box.sv"
-//`include "AES_Encrypt_ShiftRow_func.sv"
+`include "AES_Mul_func.sv"
+`include "AES_S_box.sv"
+`include "AES_Encrypt_ShiftRow_func.sv"
 
 
 module AES_Decrypt_Core
@@ -14,7 +14,7 @@ module AES_Decrypt_Core
         input  logic [127:0] round_key_10,
         input  logic [127:0] round_key,
         input  logic         decipher_new_en,
-        input EN,
+        input en,
         
     // Output Ports
         output logic         round_key_en,
@@ -68,7 +68,7 @@ end
 
 //--------------------
 
-assign after_add_roundkey = ((decipher_new_en) ? round_key_10 : (decipher_finish ? (round_key) : (MixColumn(round_key, EN)))) ^ 
+assign after_add_roundkey = ((decipher_new_en) ? round_key_10 : (decipher_finish ? (round_key) : (MixColumn(round_key, en)))) ^ 
                                 ((decipher_new_en) ? cipher_text : ((decipher_finish) ? after_shiftRows : after_mix_column));
 
 assign round_key_en = ~decipher_ready;
@@ -81,13 +81,13 @@ assign	plain_text	= plain_text_reg;
     
 // Sub Bytes
 
-assign after_sub_bytes = S_box(plain_text_reg, EN);
+assign after_sub_bytes = S_box(plain_text_reg, en);
 // Shift Row
 
-assign after_shiftRows = ShiftRow(after_sub_bytes, EN);
+assign after_shiftRows = ShiftRow(after_sub_bytes, en);
 
 // MixColumn
 
-assign after_mix_column = MixColumn(after_shiftRows, EN);
+assign after_mix_column = MixColumn(after_shiftRows, en);
 
 endmodule: AES_Decrypt_Core

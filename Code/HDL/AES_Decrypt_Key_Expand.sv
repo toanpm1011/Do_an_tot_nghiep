@@ -1,8 +1,8 @@
 //  Module: AES_Encrypt_Key_Expand
 //  
 
-//`include "AES_S_box.sv"
-//`include "AES_Rcon_func.sv"
+`include "AES_S_box.sv"
+`include "AES_Rcon_func.sv"
 
 module AES_Decrypt_Key_Expand
     (   // Port Declarations
@@ -13,7 +13,7 @@ module AES_Decrypt_Key_Expand
         input   logic           decipher_new_en,  // Co cho phep cipher text san sang
         input   logic           round_key_en,   // Co bao nhieu khoa vong moi da san sang
         input   logic [3:0]     round_num,      // So vong lap hien tai
-        input                   EN,
+        input                   en,
     // Output Port
         output  logic [127:0]   round_key_out   // Khoa vong dau ra
     );
@@ -51,7 +51,7 @@ assign after_sub_word [15:8]  = aes128_sbox1(after_rot_word [15:8], 1);
 assign after_sub_word [7:0]   = aes128_sbox1(after_rot_word [7:0], 1);
 
     // Add Rcon
-assign rcon = Rcon(round_num, EN);
+assign rcon = Rcon(round_num, en);
 assign after_add_rcon = rcon ^ after_sub_word;
 
     // next_round_key
