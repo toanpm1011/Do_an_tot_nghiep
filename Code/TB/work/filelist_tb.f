@@ -17,8 +17,5 @@
 //  Top Testbench Level Module
 ///////////////////////////////////////////////////////////////////////////////
 
-// +define+SYS_FREQ=50000000
-// +define+BAUD_RATE=9600
-// +define+DATA_SIZE=8
 
 ../src/aes_tb_top/aes_tb_top.sv

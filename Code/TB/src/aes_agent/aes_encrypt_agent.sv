@@ -1,15 +1,16 @@
-class aes_decrypt_agent extends uvm_agent;
+class aes_encrypt_agent extends uvm_agent;
 
-	`uvm_component_utils(aes_decrypt_agent)
+	`uvm_component_utils(aes_encrypt_agent)
 
-	aes_decrypt_driver driver;
-	aes_decrypt_monitor monitor;
-	aes_decrypt_sequencer sequencer;
+	virtual aes_intf vif;
+	aes_encrypt_driver driver;
+	aes_encrypt_monitor monitor;
+	aes_encrypt_sequencer sequencer;
 
 //-----------------------------------------------------------------------------
 // function :new
 //-----------------------------------------------------------------------------
-	function new (string name = "aes_decrypt_agent", uvm_component parent = null);
+	function new (string name = "aes_encrypt_agent", uvm_component parent = null);
 		super.new (name, parent);
 	endfunction : new 
 //-----------------------------------------------------------------------------
@@ -17,9 +18,13 @@ class aes_decrypt_agent extends uvm_agent;
 //-----------------------------------------------------------------------------
 	function void build_phase (uvm_phase phase);
 		super.build_phase(phase);
-		driver = aes_decrypt_driver::type_id::create("driver",this);
-		monitor = aes_decrypt_monitor::type_id::create("monitor",this);
-		sequencer = aes_decrypt_sequencer::type_id::create("sequencer",this);
+		super.build_phase(phase);
+		if (!uvm_config_db #(virtual aes_intf)::get (this, "", "vif", vif)) begin
+       `uvm_error (get_type_name (), "DUT interface not found");
+    end
+		driver = aes_encrypt_driver::type_id::create("driver",this);
+		monitor = aes_encrypt_monitor::type_id::create("monitor",this);
+		sequencer = aes_encrypt_sequencer::type_id::create("sequencer",this);
 	endfunction :build_phase
 //-----------------------------------------------------------------------------
 // function : connect_phase
@@ -29,4 +34,4 @@ class aes_decrypt_agent extends uvm_agent;
 		driver.seq_item_port.connect(sequencer.seq_item_export);
 	endfunction : connect_phase
 
-endclass : aes_decrypt_agent
+endclass : aes_encrypt_agent

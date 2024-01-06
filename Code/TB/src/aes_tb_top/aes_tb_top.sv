@@ -8,9 +8,10 @@ module aes_tb_top;
   initial begin
     clk = 1;
     reset_n = 0;
-    #20;
+    #7;
     reset_n = 1;
   end
+
   always #10 clk = ~clk;
 
   aes_intf vif( 
@@ -29,6 +30,7 @@ module aes_tb_top;
         .en               (vif.en),
         .decipher_new_en (vif.decipher_new_en),
 
+        .round_key_10_out (vif.round_key_10_out),
         .cipher_text_out (vif.cipher_text_out),
         .plain_text_out (vif.plain_text_out),
         .cipher_ready (vif.cipher_ready),

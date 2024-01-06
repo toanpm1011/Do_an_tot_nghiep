@@ -48,16 +48,6 @@ function logic [31:0] Mul_MixColumn;
 
 endfunction : Mul_MixColumn
 
-// function logic [127:0] MixColumn;
-// 	input [127:0] state_in;
-
-// 	MixColumn [127:96] = Mul_MixColumn(state_in[127:96]);
-// 	MixColumn [95:64]  = Mul_MixColumn(state_in[95:64]);
-// 	MixColumn [63:32]  = Mul_MixColumn(state_in[63:32]);
-// 	MixColumn [31:0]   = Mul_MixColumn(state_in[31:0]);
-
-// endfunction
-
 function [31:0] Mul_InvMixColumn;
 	input 	[31:0] before_inv_mix_column;
 

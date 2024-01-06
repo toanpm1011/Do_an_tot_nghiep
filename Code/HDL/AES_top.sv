@@ -14,6 +14,7 @@ module AES_top (
     input logic             en,
     input logic             decipher_new_en,
 
+    output logic    [127:0] round_key_10_out,
     output logic    [127:0] cipher_text_out,
     output logic    [127:0] plain_text_out,
     output logic            cipher_ready,
@@ -35,13 +36,15 @@ module AES_top (
     );
 
     AES_Encrypt_top_module dut
-    (   .clk            (clk),
+    (   
+        .clk            (clk),
         .reset_n        (reset_n),
         .plain_text     (plain_text_in),
         .cipher_key     (cipher_key_in),
         .cipher_new_en  (cipher_new_en),
         .en             (en),
 
+        .round_key_10_out (round_key_10_out),
         .cipher_ready   (cipher_ready),
         .cipher_text    (cipher_text_out)
     );

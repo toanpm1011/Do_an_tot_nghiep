@@ -14,7 +14,7 @@ module AES_Encrypt_Core
         input  logic [127:0] cipher_key,
         input  logic [127:0] round_key,
         input  logic         cipher_new_en,
-        input  logic en,
+        input  logic         en,
         
     // Output Ports
         output logic         round_key_en,

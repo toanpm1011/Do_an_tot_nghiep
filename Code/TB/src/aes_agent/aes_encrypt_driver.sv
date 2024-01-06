@@ -34,33 +34,45 @@ endfunction :build_phase
 //-----------------------------------------------------------------------------
   task drive(aes_encrypt_transaction item);
     @(negedge vif.clk)
-    if (!vif.reset_n) begin
+    if (~vif.reset_n) begin
       vif.plain_text_in   <= 0;
       vif.cipher_key_in   <= 0;
       vif.cipher_new_en   <= 0;
       vif.en              <= 0;
+      vif.cipher_text_in  <= 0;
+      vif.round_key_10    <= 0;
     end
-
     else begin
       vif.plain_text_in   <= item.plain_text_in;
       vif.cipher_key_in   <= item.cipher_key_in;
       vif.cipher_new_en   <= item.cipher_new_en;
       vif.en              <= item.en;
-      @(posedge vif.clk)
-      vif.cipher_new_en <= 0;
-    end 
-
-    forever begin
+      vif.cipher_text_in    <= '0;
+      vif.round_key_10      <= '0;
+      vif.decipher_new_en   <= 0;
       @(posedge vif.clk);
-      if(vif.cipher_ready) begin
-        repeat(3) @(posedge vif.clk);
-        break;
-      end
-      else continue;
+      vif.cipher_new_en <= 0;
+      `uvm_info ("ENCRYPT_DRIVER", "SEND DATA", UVM_LOW)
+        @(posedge vif.clk);
+        wait(vif.cipher_ready)
+           @(posedge vif.clk);
+           vif.cipher_text_in    <= vif.cipher_text_out;
+           vif.round_key_10      <= vif.round_key_10_out;
+           vif.decipher_new_en   <= item.decipher_new_en;
+           vif.en                <= 0;
+           @(posedge vif.clk);
+          vif.decipher_new_en <= 0;
+           forever begin 
+            if (vif.decipher_new_en) begin
+              @(posedge vif.clk);
+              wait(vif.decipher_ready) 
+              @(posedge vif.clk)
+              break;
+            end
+            else continue;
+      end 
+    //$display("data = %h", vif.plain_text_in);
     end
-
-    `uvm_info ("ENCRYPT_DRIVER", "SEND DATA", UVM_LOW)
-    
   endtask : drive 
 
 endclass : aes_encrypt_driver

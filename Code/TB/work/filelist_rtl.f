@@ -3,7 +3,7 @@
 +libext+.sv                      // Verilog wrapper files
 
 //  Design Library
-+incdir+../../HDL
--y  ../../HDL
++incdir+../../hdl
+-y  ../../hdl
 
-../../HDL/AES_top.sv
+../../hdl/AES_top.sv
