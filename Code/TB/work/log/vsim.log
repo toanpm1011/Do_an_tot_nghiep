@@ -1,15 +1,14 @@
-# vsim -c dti_uart_tb_top -wlf vsim.wlf -solvefaildebug -assertdebug -sva -coverage -voptargs="+acc" -l ./log/vsim.log "+UVM_VERBOSITY=UVM_MEDIUM" -sv_lib ../libs/uvm-1.1d/lib/uvm_dpi64 -do "coverage save -onexit -assert -code bcefs -directive -cvg ucdb/uart.ucdb; add wave -r /dti_uart_tb_top/*; run -all; quit" 
-# Start time: 09:25:12 on Dec 19,2023
+# vsim -c aes_tb_top -wlf vsim.wlf -solvefaildebug -assertdebug -sva -coverage -voptargs="+acc" -l ./log/vsim.log "+UVM_VERBOSITY=UVM_MEDIUM" -sv_lib ../libs/uvm-1.1d/lib/uvm_dpiWin64 -do "coverage save -onexit -assert -code bcefs -directive -cvg ucdb/uart.ucdb; add wave -r /aes_tb_top/*; run -all; exit" 
+# Start time: 22:27:53 on Jan 06,2024
+# ** Note: (vsim-2179) An older version (version 10) DPI tfdb file is being read.
+#    Time: 0 ns  Iteration: 0  Unknown: <UNKNOWN>
 # ** Note: (vsim-3812) Design is being optimized...
-# ** Note: (vopt-143) Recognized 1 FSM in module "uart_receiver(fast)".
-# ** Note: (vopt-143) Recognized 1 FSM in module "uart_transmitter(fast)".
-# //  Questa Sim-64
-# //  Version 10.7d_1 linux_x86_64 May  8 2019
+# //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
-# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  Copyright 1991-2020 Mentor Graphics Corporation
 # //  All Rights Reserved.
 # //
-# //  QuestaSim and its associated documentation contain trade
+# //  ModelSim SE-64 and its associated documentation contain trade
 # //  secrets and commercial or financial information that are the property of
 # //  Mentor Graphics Corporation and are privileged, confidential,
 # //  and exempt from disclosure under the Freedom of Information Act,
@@ -22,16 +21,26 @@
 # different random seeds from your non-debug simulations.
 # Loading sv_std.std
 # Loading work.uvm_pkg(fast)
-# Loading work.dti_uart_tb_top_sv_unit(fast)
-# Loading work.dti_uart_tb_top(fast)
-# Loading work.dti_uart_intf(fast)
-# Loading work.uart(fast)
-# Loading work.uart_transmitter(fast)
-# Loading work.uart_receiver(fast)
-# Loading work.dti_uart_intf(fast)
-# Loading ./../libs/uvm-1.1d/lib/uvm_dpi64.so
+# Loading work.aes_tb_top_sv_unit(fast)
+# Loading work.aes_tb_top(fast)
+# Loading work.aes_intf(fast__2)
+# Loading work.AES_top_sv_unit(fast)
+# Loading work.AES_top(fast)
+# Loading work.AES_Decrypt_top_module(fast)
+# Loading work.AES_Decrypt_Key_Expand_sv_unit(fast)
+# Loading work.AES_Decrypt_Key_Expand(fast)
+# Loading work.AES_Decrypt_Core_sv_unit(fast)
+# Loading work.AES_Decrypt_Core(fast)
+# Loading work.AES_Encrypt_top_module_sv_unit(fast)
+# Loading work.AES_Encrypt_top_module(fast)
+# Loading work.AES_Encrypt_Key_Expand_sv_unit(fast)
+# Loading work.AES_Encrypt_Key_Expand(fast)
+# Loading work.AES_Encrypt_Core_sv_unit(fast)
+# Loading work.AES_Encrypt_Core(fast)
+# Loading work.aes_intf(fast)
+# Loading .\../libs/uvm-1.1d/lib/uvm_dpiWin64.dll
 # coverage save -onexit -assert -code bcefs -directive -cvg ucdb/uart.ucdb
-#  add wave -r /dti_uart_tb_top/*
+#  add wave -r /aes_tb_top/*
 #  run -all
 # ----------------------------------------------------------------
 # UVM-1.1d
@@ -53,133 +62,32 @@
 # 
 #       (Specify +UVM_NO_RELNOTES to turn off this notice)
 # 
-# UVM_INFO @ 0: reporter [RNTST] Running test base_test...
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 989500000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 989500000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 01100111
-# rx_sample = 01100111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 989520000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 989520000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 01100111
-# rx_sample = 01100111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 989540000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 11001110
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(30) @ 1145780000: uvm_test_top.env.scb [UVM_INFO] TX PASS!
-# frame_tx = 10111101 , d_in = 10111101
-# UVM_INFO ../src/dti_uart_tx/dti_uart_tx_driver.sv(58) @ 1145820000: uvm_test_top.env.tx_agent.driver [TX_DRIVER] SEND DATA
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 1979040000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 1979040000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10110001
-# rx_sample = 10110001
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 1979060000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 1979060000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10110001
-# rx_sample = 10110001
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 1979080000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 1979080000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10110001
-# rx_sample = 10110001
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 1979100000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 01100010
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(30) @ 2291600000: uvm_test_top.env.scb [UVM_INFO] TX PASS!
-# frame_tx = 00001101 , d_in = 00001101
-# UVM_INFO ../src/dti_uart_tx/dti_uart_tx_driver.sv(58) @ 2291640000: uvm_test_top.env.tx_agent.driver [TX_DRIVER] SEND DATA
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 2968600000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 2968600000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 00101111
-# rx_sample = 00101111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 2968620000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 2968620000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 00101111
-# rx_sample = 00101111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 2968640000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 2968640000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 00101111
-# rx_sample = 00101111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 2968660000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 01011110
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(30) @ 3437420000: uvm_test_top.env.scb [UVM_INFO] TX PASS!
-# frame_tx = 00111010 , d_in = 00111010
-# UVM_INFO ../src/dti_uart_tx/dti_uart_tx_driver.sv(58) @ 3437460000: uvm_test_top.env.tx_agent.driver [TX_DRIVER] SEND DATA
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 3958160000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 3958160000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010011
-# rx_sample = 10010011
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 3958180000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 3958180000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010011
-# rx_sample = 10010011
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 3958200000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 3958200000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010011
-# rx_sample = 10010011
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 3958220000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 3958220000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010011
-# rx_sample = 10010011
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 3958240000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 3958240000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010011
-# rx_sample = 10010011
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 3958260000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 00100110
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(30) @ 4583240000: uvm_test_top.env.scb [UVM_INFO] TX PASS!
-# frame_tx = 11110000 , d_in = 11110000
-# UVM_INFO ../src/dti_uart_tx/dti_uart_tx_driver.sv(58) @ 4583280000: uvm_test_top.env.tx_agent.driver [TX_DRIVER] SEND DATA
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 4947760000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 4947760000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10000111
-# rx_sample = 10000111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 4947780000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 4947780000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10000111
-# rx_sample = 10000111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 4947800000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 4947800000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10000111
-# rx_sample = 10000111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 4947820000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 4947820000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10000111
-# rx_sample = 10000111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 4947840000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 4947840000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10000111
-# rx_sample = 10000111
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 4947860000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 00001110
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 5937360000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 5937360000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010000
-# rx_sample = 10010000
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 5937380000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 5937380000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010000
-# rx_sample = 10010000
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_monitor.sv(34) @ 5937400000: uvm_test_top.env.rx_agent.monitor [MONITOR RX] Collected Data
-# UVM_INFO ../src/dti_uart_scoreboard/dti_uart_scoreboard.sv(42) @ 5937400000: uvm_test_top.env.scb [UVM_INFO] RX PASS!
-# d_out = 10010000
-# rx_sample = 10010000
-# UVM_INFO ../src/dti_uart_rx/dti_uart_rx_driver.sv(73) @ 5937420000: uvm_test_top.env.rx_agent.driver [RX_DRIVER] SEND DATA
-# rx_frame = 00100000
-# UVM_INFO ../libs/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 5937420000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+# UVM_INFO @ 0: reporter [RNTST] Running test aes_test...
+# UVM_INFO ../src/aes_agent/aes_encrypt_driver.sv(55) @ 20: uvm_test_top.env.encrypt_agent.driver [ENCRYPT_DRIVER] SEND DATA
+# UVM_INFO ../src/aes_scoreboard/aes_scoreboard.sv(30) @ 480: uvm_test_top.env.scb [UVM_INFO] PASS!
+# plain_text_in = acaae3b99346b5390a1879e1d646ca15 , plain_text_out = acaae3b99346b5390a1879e1d646ca15
+# UVM_INFO ../src/aes_agent/aes_encrypt_driver.sv(55) @ 500: uvm_test_top.env.encrypt_agent.driver [ENCRYPT_DRIVER] SEND DATA
+# UVM_INFO ../src/aes_scoreboard/aes_scoreboard.sv(30) @ 960: uvm_test_top.env.scb [UVM_INFO] PASS!
+# plain_text_in = 7cfa9b4020e2aefef6196219c399f4a7 , plain_text_out = 7cfa9b4020e2aefef6196219c399f4a7
+# UVM_INFO ../src/aes_agent/aes_encrypt_driver.sv(55) @ 980: uvm_test_top.env.encrypt_agent.driver [ENCRYPT_DRIVER] SEND DATA
+# UVM_INFO ../src/aes_scoreboard/aes_scoreboard.sv(30) @ 1440: uvm_test_top.env.scb [UVM_INFO] PASS!
+# plain_text_in = c2e5e704d5fae313fdda7e6f642160ec , plain_text_out = c2e5e704d5fae313fdda7e6f642160ec
+# UVM_INFO ../libs/uvm-1.1d/src/base/uvm_objection.svh(1267) @ 1440: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
 # 
 # --- UVM Report Summary ---
 # 
 # ** Report counts by severity
-# UVM_INFO :   58
+# UVM_INFO :    8
 # UVM_WARNING :    0
 # UVM_ERROR :    0
 # UVM_FATAL :    0
 # ** Report counts by id
-# [MONITOR RX]    21
+# [ENCRYPT_DRIVER]     3
 # [RNTST]     1
-# [RX_DRIVER]     6
 # [TEST_DONE]     1
-# [TX_DRIVER]     4
-# [UVM_INFO]    25
+# [UVM_INFO]     3
 # ** Note: $finish    : ../libs/uvm-1.1d/src/base/uvm_root.svh(430)
-#    Time: 5937420 ns  Iteration: 61  Instance: /dti_uart_tb_top
+#    Time: 1440 ns  Iteration: 61  Instance: /aes_tb_top
 # Saving coverage database on exit...
-# End time: 09:25:17 on Dec 19,2023, Elapsed time: 0:00:05
+# End time: 22:27:57 on Jan 06,2024, Elapsed time: 0:00:04
 # Errors: 0, Warnings: 0
