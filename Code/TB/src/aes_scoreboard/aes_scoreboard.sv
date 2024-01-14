@@ -30,7 +30,6 @@ class aes_scoreboard extends uvm_scoreboard;
       `uvm_info ("UVM_INFO","PASS!", UVM_LOW)
       $display("plain_text_in = %h , plain_text_out = %h",  item.plain_text_in, item.plain_text_out);//, ; //  */
     end
-      //`uvm_error ("UVM_ERROR","CHECK Failed!")
   endfunction : write
 
 endclass : aes_scoreboard

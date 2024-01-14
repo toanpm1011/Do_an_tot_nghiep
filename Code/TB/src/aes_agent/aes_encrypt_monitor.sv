@@ -30,7 +30,7 @@ class aes_encrypt_monitor extends uvm_monitor;
   task collect_data();
     aes_encrypt_transaction item = new aes_encrypt_transaction::type_id::create("item");
     forever begin 
-    @(posedge vif.decipher_ready)
+    wait(vif.decipher_ready)
     @(posedge vif.clk)
       item.plain_text_in = vif.plain_text_in;
       item.plain_text_out = vif.plain_text_out;

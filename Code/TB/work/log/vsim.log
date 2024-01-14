@@ -1,8 +1,8 @@
 # vsim -c aes_tb_top -wlf vsim.wlf -solvefaildebug -assertdebug -sva -coverage -voptargs="+acc" -l ./log/vsim.log "+UVM_VERBOSITY=UVM_MEDIUM" -sv_lib ../libs/uvm-1.1d/lib/uvm_dpiWin64 -do "coverage save -onexit -assert -code bcefs -directive -cvg ucdb/uart.ucdb; add wave -r /aes_tb_top/*; run -all; exit" 
-# Start time: 22:27:53 on Jan 06,2024
+# Start time: 16:00:28 on Jan 14,2024
 # ** Note: (vsim-2179) An older version (version 10) DPI tfdb file is being read.
 #    Time: 0 ns  Iteration: 0  Unknown: <UNKNOWN>
-# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # //  ModelSim SE-64 2020.4 Oct 13 2020
 # //
 # //  Copyright 1991-2020 Mentor Graphics Corporation
@@ -26,6 +26,7 @@
 # Loading work.aes_intf(fast__2)
 # Loading work.AES_top_sv_unit(fast)
 # Loading work.AES_top(fast)
+# Loading work.AES_Decrypt_top_module_sv_unit(fast)
 # Loading work.AES_Decrypt_top_module(fast)
 # Loading work.AES_Decrypt_Key_Expand_sv_unit(fast)
 # Loading work.AES_Decrypt_Key_Expand(fast)
@@ -89,5 +90,5 @@
 # ** Note: $finish    : ../libs/uvm-1.1d/src/base/uvm_root.svh(430)
 #    Time: 1440 ns  Iteration: 61  Instance: /aes_tb_top
 # Saving coverage database on exit...
-# End time: 22:27:57 on Jan 06,2024, Elapsed time: 0:00:04
+# End time: 16:00:31 on Jan 14,2024, Elapsed time: 0:00:03
 # Errors: 0, Warnings: 0

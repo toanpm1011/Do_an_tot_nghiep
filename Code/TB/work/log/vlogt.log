@@ -1,8 +1,9 @@
 Model Technology ModelSim SE-64 vlog 2020.4 Compiler 2020.10 Oct 13 2020
-Start time: 22:26:57 on Jan 06,2024
+Start time: 16:00:14 on Jan 14,2024
 vlog -f filelist_tb.f -l ./log/vlogt.log 
 -- Skipping package uvm_pkg
 -- Skipping interface aes_intf
+-- Skipping module aes_tb_top
 -- Compiling package aes_tb_top_sv_unit
 -- Compiling module aes_tb_top
 -- Scanning library directory '../inc'
@@ -14,5 +15,5 @@ Referenced (but uncompiled) modules or primitives:
 
 Top level modules:
 	aes_tb_top
-End time: 22:26:58 on Jan 06,2024, Elapsed time: 0:00:01
+End time: 16:00:15 on Jan 14,2024, Elapsed time: 0:00:01
 Errors: 0, Warnings: 0

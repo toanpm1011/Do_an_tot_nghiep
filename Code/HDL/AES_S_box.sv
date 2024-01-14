@@ -12,7 +12,7 @@ function logic [1:0] mulGf22;
 endfunction
 
 //-----------------------------------------------------
-// Multiple 2 operands in GF(2^4)
+// Phep nhan 2 phan tu trong truong GF(2^4)
 //-----------------------------------------------------
 function logic [3:0] mulGf24;
   input [3:0] operand0;
